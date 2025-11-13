@@ -1,5 +1,6 @@
-## Installing Plugins
-The way plugins are installed are by,
-1. Use `plug#begin()` and `plug#end()` enclosing all your plugins in a block.
-2. Typing in, `Plug` *link to the plugin github repository* to add the plugin to the `.vimrc`.
-3. Running, `:PlugInstall` to install the plugin after which refreshing the editor should do the trick.
+# References
+
+- [Neovim setup on Ubuntu Part 1/3](https://www.youtube.com/watch?v=cdAMq2KcF4w)
+- [Guide to setting up Nvim on macOS with WezTerm](https://poltora.dev/neovim-for-developers/)
+- [Installing Nerd Fonts on Linux](https://blog.khmersite.net/p/installing-nerd-font-on-fedora/)
+- [Windows Terminal Themes](https://windowsterminalthemes.dev/)
