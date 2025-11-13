@@ -1,0 +1,5 @@
+-- TITLE : globals
+-- ABOUT : you may have different global & local leaders
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
