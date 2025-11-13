@@ -14,7 +14,7 @@ return {
 
 		require("nvim-tree").setup({
 			filters = {
-				dotfiles = true, -- Show hidden files (dotfiles)
+				dotfiles = false, -- Show hidden files (false to show dotfiles)
 			},
 			view = {
 				adaptive_size = true,
