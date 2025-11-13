@@ -4,3 +4,6 @@
 - [Guide to setting up Nvim on macOS with WezTerm](https://poltora.dev/neovim-for-developers/)
 - [Installing Nerd Fonts on Linux](https://blog.khmersite.net/p/installing-nerd-font-on-fedora/)
 - [Windows Terminal Themes](https://windowsterminalthemes.dev/)
+
+> [!NOTE]
+> Be sure to check all the scripts for the projects that they reference.
