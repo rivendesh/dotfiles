@@ -7,7 +7,7 @@ vim.opt.relativenumber = true -- Relative line numbers
 vim.opt.cursorline = true -- Highlight current line
 vim.opt.scrolloff = 10 -- Keep 10 lines above/below cursor
 vim.opt.sidescrolloff = 8 -- Keep 8 columns left/right of cursor
-vim.opt.wrap = false -- Word wrap toggle
+vim.opt.wrap = true -- Word wrap toggle
 vim.opt.cmdheight = 1 -- Command line height
 vim.opt.spelllang = { "en", "en_us" } -- Set language for spellchecking (use commas for more languages)
 
