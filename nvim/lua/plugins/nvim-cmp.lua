@@ -56,6 +56,7 @@ return {
 				}),
 			},
 
+            -- Keymaps for completion plugins
 			mapping = cmp.mapping.preset.insert({
 				["<C-k>"] = cmp.mapping.select_prev_item(),
 				["<C-j>"] = cmp.mapping.select_next_item(),
