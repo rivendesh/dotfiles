@@ -30,7 +30,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Format on save using efm langserver and configured formatters
-
 local lsp_fmt_group = vim.api.nvim_create_augroup("FormatOnSaveGroup", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
 	group = lsp_fmt_group,
@@ -48,6 +47,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 -- on_attach function shortcuts
 -- local lsp_on_attach_group = vim.api.nvim_create_augroup("LspMappings", {})
 -- vim.api.nvim_create_autocmd("LspAttach", {
---     group = lsp_on_attach_group,
---     callback = on_attach,
+-- 	group = lsp_on_attach_group,
+-- 	callback = on_attach,
 -- })

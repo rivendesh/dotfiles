@@ -11,8 +11,10 @@
 return function(capabilities)
 	local luacheck = require("efmls-configs.linters.luacheck") -- lua linter
 	local stylua = require("efmls-configs.formatters.stylua") -- lua formatter
-	local flake8 = require("efmls-configs.linters.flake8") -- python linter
-	local black = require("efmls-configs.formatters.black") -- python formatter
+	-- local flake8 = require("efmls-configs.linters.flake8") -- python linter
+	-- local black = require("efmls-configs.formatters.black") -- python formatter
+	local pylint = require("efmls-configs.linters.pylint") -- python linter
+	local ruff = require("efmls-configs.formatters.ruff") -- python formatter
 	local go_revive = require("efmls-configs.linters.go_revive") -- go linter
 	local gofumpt = require("efmls-configs.formatters.gofumpt") -- go formatter
 	local prettier_d = require("efmls-configs.formatters.prettier") -- ts/js/solidity/json/docker/html/css/react/svelte/vue formatter
@@ -71,7 +73,8 @@ return function(capabilities)
 				jsonc = { eslint_d, fixjson },
 				lua = { luacheck, stylua },
 				markdown = { prettier_d },
-				python = { flake8, black },
+				python = { pylint, ruff },
+				-- python = { flake8, black },
 				sh = { shellcheck, shfmt },
 				solidity = { solhint, prettier_d },
 				svelte = { eslint_d, prettier_d },
