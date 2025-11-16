@@ -1,5 +1,7 @@
--- TITLE : globals
--- ABOUT : you may have different global & local leaders
+-- ================================================================================================
+-- TITLE : globals.lua
+-- ABOUT : Settings the leader key
+-- ================================================================================================
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
