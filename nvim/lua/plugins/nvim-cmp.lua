@@ -68,6 +68,7 @@ return {
 			}),
 
 			sources = {
+				{ name = "otter" },
 				{ name = "codeium" },
 				{ name = "luasnip" },
 				{ name = "nvim_lsp" },

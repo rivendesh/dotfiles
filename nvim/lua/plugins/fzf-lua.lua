@@ -6,13 +6,13 @@
 -- ================================================================================================
 
 return {
-    "ibhagwan/fzf-lua",
-    lazy = false,
-    -- optional for icon support
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    -- or if using mini.icons/mini.nvim
-    -- dependencies = { "nvim-mini/mini.icons" },
-    keys = {
+	"ibhagwan/fzf-lua",
+	lazy = false,
+	-- optional for icon support
+	-- dependencies = { "nvim-tree/nvim-web-devicons" },
+	-- or if using mini.icons/mini.nvim
+	dependencies = { "nvim-mini/mini.icons" },
+	keys = {
 		{
 			"<leader>ff",
 			function()
@@ -70,5 +70,5 @@ return {
 			desc = "FZF Workspace Symbols",
 		},
 	},
-    opts = {}
+	opts = {},
 }
