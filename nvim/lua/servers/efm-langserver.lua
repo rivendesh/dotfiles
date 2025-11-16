@@ -15,7 +15,8 @@ return function(capabilities)
 	local black = require("efmls-configs.formatters.black") -- python formatter
 	local go_revive = require("efmls-configs.linters.go_revive") -- go linter
 	local gofumpt = require("efmls-configs.formatters.gofumpt") -- go formatter
-	local prettier_d = require("efmls-configs.formatters.prettier_d") -- ts/js/solidity/json/docker/html/css/react/svelte/vue formatter
+	local prettier_d = require("efmls-configs.formatters.prettier") -- ts/js/solidity/json/docker/html/css/react/svelte/vue formatter
+	-- local prettier_d = require("efmls-configs.formatters.prettier_d") -- ts/js/solidity/json/docker/html/css/react/svelte/vue formatter
 	local eslint_d = require("efmls-configs.linters.eslint_d") -- ts/js/solidity/json/react/svelte/vue linter
 	local fixjson = require("efmls-configs.formatters.fixjson") -- json formatter
 	local shellcheck = require("efmls-configs.linters.shellcheck") -- bash linter
