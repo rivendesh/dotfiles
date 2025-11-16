@@ -12,7 +12,7 @@ return function(capabilities)
 	local luacheck = require("efmls-configs.linters.luacheck") -- lua linter
 	local stylua = require("efmls-configs.formatters.stylua") -- lua formatter
 	-- local flake8 = require("efmls-configs.linters.flake8") -- python linter
-    -- local black = require("efmls-configs.formatters.black") -- python formatter
+	-- local black = require("efmls-configs.formatters.black") -- python formatter
 	local pylint = require("efmls-configs.linters.pylint") -- python linter
 	local ruff = require("efmls-configs.formatters.ruff") -- python formatter
 	local go_revive = require("efmls-configs.linters.go_revive") -- go linter

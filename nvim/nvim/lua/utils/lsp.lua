@@ -8,7 +8,7 @@ M.on_attach = function(event)
 	local bufnr = event.buf
 	local keymap = vim.keymap.set
 	local opts = {
-		noremap = true, -- prevent recursive mapping
+		nnoremap = true, -- prevent recursive mapping
 		silent = false, -- don't print the command to the cli
 		buffer = bufnr, -- restrict the keymap to the local buffer number
 	}
@@ -51,15 +51,15 @@ M.on_attach = function(event)
 	end
 
 	-- === DAP keymaps ===
-	if client.name == "rust-analyzer" then -- debugging only configured for Rust
-		local dap = require("dap")
-		keymap("n", "<leader>dc", dap.continue, opts) -- Continue / Start
-		keymap("n", "<leader>do", dap.step_over, opts) -- Step over
-		keymap("n", "<leader>di", dap.step_into, opts) -- Step into
-		keymap("n", "<leader>du", dap.step_out, opts) -- Step out
-		keymap("n", "<leader>db", dap.toggle_breakpoint, opts) -- Toggle breakpoint
-		keymap("n", "<leader>dr", dap.repl.open, opts) -- Open DAP REPL
-	end
+	-- if client.name == "rust-analyzer" then -- debugging only configured for Rust
+	-- 	local dap = require("dap")
+	-- 	keymap("n", "<leader>dc", dap.continue, opts) -- Continue / Start
+	-- 	keymap("n", "<leader>do", dap.step_over, opts) -- Step over
+	-- 	keymap("n", "<leader>di", dap.step_into, opts) -- Step into
+	-- 	keymap("n", "<leader>du", dap.step_out, opts) -- Step out
+	-- 	keymap("n", "<leader>db", dap.toggle_breakpoint, opts) -- Toggle breakpoint
+	-- 	keymap("n", "<leader>dr", dap.repl.open, opts) -- Open DAP REPL
+	-- end
 end
 
 return M
