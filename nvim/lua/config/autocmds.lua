@@ -44,6 +44,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
 })
 
+vim.api.nvim_create_autocmd("TermOpen", {
+	desc = "Remove line numbers in the terminal",
+	callback = function()
+		vim.wo.number = false
+	end,
+})
+
 -- on_attach function shortcuts
 -- local lsp_on_attach_group = vim.api.nvim_create_augroup("LspMappings", {})
 -- vim.api.nvim_create_autocmd("LspAttach", {
