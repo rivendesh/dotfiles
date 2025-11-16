@@ -1,5 +1,7 @@
--- TITLE: Nvim Options
--- ABOUT: Basic settings native to nvim
+-- ================================================================================================
+-- TITLE : options.lua
+-- ABOUT : Basic native settings
+-- ================================================================================================
 
 -- Basic settings
 vim.opt.number = true -- Line numbers
