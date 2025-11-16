@@ -5,6 +5,8 @@
 -- -- ABOUT : Quarto mode for Neovim.
 -- -- ================================================================================================
 
+vim.b.slime_cell_delimiter = "```" -- Set local buffer delimiter as triple backticks
+
 return {
 	{
 		"quarto-dev/quarto-nvim",
