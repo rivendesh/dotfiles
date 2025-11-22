@@ -76,4 +76,6 @@ vim.keymap.set("n", "<leader>gi", "<cmd>FzfLua lsp_implementations<CR>", opts) -
 -- Quarto keymaps
 -- Note: m stands for Meta key; left Alt
 vim.keymap.set({ "n", "i" }, "<m-i>", "<esc>i```{python}<cr>```<esc>O", { desc = "[i]sert Python Code Chunk" }) -- Insert a code chunk for Python in a .qmd file
-vim.keymap.set("n", "<m-t>", ":split term://ipython<CR>", { desc = "Split horizontally and open IPython" }) -- Open an IPython instance
+vim.keymap.set("n", "<m-t>", ":split term://ipython<CR>", { desc = "Split [t]erminal horizontally and open IPython" }) -- Open an IPython instance
+vim.keymap.set({ "n", "i" }, "<leader>qp", ":QuartoPreview<CR>", { desc = "Open [q]uarto [p]review" }) -- Open Quarto preview
+
