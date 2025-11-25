@@ -8,10 +8,9 @@
 return {
 	"ibhagwan/fzf-lua",
 	lazy = false,
-	-- optional for icon support
-	-- dependencies = { "nvim-tree/nvim-web-devicons" },
-	-- or if using mini.icons/mini.nvim
+
 	dependencies = { "nvim-mini/mini.icons" },
+
 	keys = {
 		{
 			"<leader>ff",
@@ -46,29 +45,43 @@ return {
 			function()
 				require("fzf-lua").diagnostics_document()
 			end,
-			desc = "FZF Diagnostics Document",
+			desc = "FZF Diagnostics (Document)",
 		},
 		{
 			"<leader>fX",
 			function()
 				require("fzf-lua").diagnostics_workspace()
 			end,
-			desc = "FZF Diagnostics Workspace",
+			desc = "FZF Diagnostics (Workspace)",
 		},
 		{
 			"<leader>fs",
 			function()
 				require("fzf-lua").lsp_document_symbols()
 			end,
-			desc = "FZF Document Symbols",
+			desc = "FZF Symbols (Document)",
 		},
 		{
 			"<leader>fS",
 			function()
 				require("fzf-lua").lsp_workspace_symbols()
 			end,
-			desc = "FZF Workspace Symbols",
+			desc = "FZF Symbols (Workspace)",
 		},
 	},
-	opts = {},
+
+	opts = function()
+		local actions = require("fzf-lua").actions
+		return {
+			actions = {
+				-- FIX: Enter opens only a single file
+				["default"] = actions.file_edit,
+
+				-- Extra convenience binds
+				["ctrl-s"] = actions.file_split,
+				["ctrl-v"] = actions.file_vsplit,
+				["ctrl-t"] = actions.file_tabedit,
+			},
+		}
+	end,
 }
