@@ -8,7 +8,15 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-	opts = {},
+	opts = {
+		-- Fix spacebar lag in insert mode by disabling which-key wait on <Space>
+		triggers = { "<leader>" }, -- the only valid format
+
+		triggers_no_wait = {
+			-- In insert mode, do NOT wait on "<space>"
+			i = { "<space>" },
+		},
+	},
 	keys = {
 		{
 			"<leader>?",
@@ -19,3 +27,4 @@ return {
 		},
 	},
 }
+
