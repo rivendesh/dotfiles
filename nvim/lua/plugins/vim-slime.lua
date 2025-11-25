@@ -6,7 +6,7 @@ return {
 		vim.g.slime_target = "neovim"
 		vim.g.slime_python_ipython = 1
 		vim.g.slime_dispatch_ipython_pause = 100
-		vim.g.slime_cell_delimiter = "#\\s\\=%%\n" -- Use regex to accept delims without spaces too
+		vim.g.slime_cell_delimiter = "# %%" -- Use regex to accept delims without spaces too
 		vim.cmd([[
         function! _EscapeText_python(text)
           if slime#config#resolve("python_ipython") && len(split(a:text,"\n")) > 1
