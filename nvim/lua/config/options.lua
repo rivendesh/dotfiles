@@ -9,7 +9,7 @@ vim.opt.relativenumber = true -- Relative line numbers
 vim.opt.cursorline = true -- Highlight current line
 vim.opt.scrolloff = 10 -- Keep 10 lines above/below cursor
 vim.opt.sidescrolloff = 8 -- Keep 8 columns left/right of cursor
-vim.opt.wrap = true -- Word wrap toggle
+vim.opt.wrap = false -- Word wrap toggle
 vim.opt.cmdheight = 1 -- Command line height
 vim.opt.spelllang = { "en", "en_us" } -- Set language for spellchecking (use commas for more languages)
 
@@ -77,7 +77,7 @@ vim.opt.iskeyword:append("-") -- Treat dash as part of a word
 vim.opt.path:append("**") -- Search into subfolders with `gf`
 vim.opt.selection = "inclusive" -- Use inclusive selection
 vim.opt.mouse = "a" -- Enable mouse support
-vim.opt.clipboard:append("unnamedplus") -- Use system clipboard
+-- vim.opt.clipboard("unnamedplus") -- Use system clipboard
 vim.opt.modifiable = true -- Allow editing buffers
 vim.opt.encoding = "UTF-8" -- Use UTF-8 encoding
 vim.opt.wildmenu = true -- Enable command-line completion menu
@@ -102,3 +102,21 @@ vim.opt.foldlevel = 99 -- Keep all folds open by default
 -- Split Behavior
 vim.opt.splitbelow = true -- Horizontal splits open below
 vim.opt.splitright = true -- Vertical splits open to the right
+
+-- Use system clipboard (WSL -> Windows)
+-- vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = ""
+
+-- Explicit WSL clipboard integration (fixes copy from WSL → Windows)
+vim.g.clipboard = {
+	name = "WslClipboard",
+	copy = {
+		["+"] = "clip.exe",
+		["*"] = "clip.exe",
+	},
+	paste = {
+		["+"] = "powershell.exe -c Get-Clipboard",
+		["*"] = "powershell.exe -c Get-Clipboard",
+	},
+	cache_enabled = 0,
+}

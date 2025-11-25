@@ -73,9 +73,19 @@ vim.keymap.set("n", "<leader>ds", "<cmd>FzfLua lsp_document_symbols<CR>", opts) 
 vim.keymap.set("n", "<leader>ws", "<cmd>FzfLua lsp_workspace_symbols<CR>", opts) -- Search for any symbol across the entire project/workspace
 vim.keymap.set("n", "<leader>gi", "<cmd>FzfLua lsp_implementations<CR>", opts) -- Go to implementation
 
+-- Copy/Paste to Windows Clipboard
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y') -- Yank to Windows clipboard
+vim.keymap.set("n", "<leader>p", '"+p') -- Paste from Windows clipboard
+
 -- Quarto keymaps
 -- Note: m stands for Meta key; left Alt
+-- It's also displayed with the symbol for the option key on MacOS
 vim.keymap.set({ "n", "i" }, "<m-i>", "<esc>i```{python}<cr>```<esc>O", { desc = "[i]sert Python Code Chunk" }) -- Insert a code chunk for Python in a .qmd file
-vim.keymap.set("n", "<m-t>", ":split term://ipython<CR>", { desc = "Split [t]erminal horizontally and open IPython" }) -- Open an IPython instance
-vim.keymap.set({ "n", "i" }, "<leader>qp", ":QuartoPreview<CR>", { desc = "Open [q]uarto [p]review" }) -- Open Quarto preview
+vim.keymap.set("n", "<m-t>", ":vsplit term://ipython<CR>", { desc = "Split [t]erminal horizontally and open IPython" }) -- Open an IPython instance
+vim.keymap.set("n", "<leader>qp", ":QuartoPreview<CR>", { desc = "Open [q]uarto [p]review" }) -- Open Quarto preview
 
+-- Toggleterm keymaps
+-- vim.keymap.set("n", "<M-\\>", ":ToggleTerm direction='float'<CR>", { desc = "Toggle [t]erminal" })
+vim.keymap.set({ "n", "t" }, "<M-\\>", function()
+	require("toggleterm").toggle(1, nil, nil, "float")
+end, { desc = "Toggle [t]erminal" })

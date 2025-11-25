@@ -1,8 +1,6 @@
 -- TITLE : auto-commands
 -- ABOUT : automatically run code on defined events (e.g. save, yank)
 
--- local on_attach = require("utils.lsp").on_attach
-
 -- Restore last cursor position when reopening a file
 local last_cursor_group = vim.api.nvim_create_augroup("LastCursorGroup", {})
 vim.api.nvim_create_autocmd("BufReadPost", {
@@ -52,8 +50,48 @@ vim.api.nvim_create_autocmd("TermOpen", {
 })
 
 -- on_attach function shortcuts
+-- local on_attach = require("utils.lsp").on_attach
 -- local lsp_on_attach_group = vim.api.nvim_create_augroup("LspMappings", {})
 -- vim.api.nvim_create_autocmd("LspAttach", {
 -- 	group = lsp_on_attach_group,
 -- 	callback = on_attach,
 -- })
+
+local api = vim.api
+
+-- Set indent width for specific languages
+api.nvim_create_autocmd("FileType", {
+	pattern = "python",
+	callback = function()
+		vim.opt_local.shiftwidth = 4
+		vim.opt_local.tabstop = 4
+		vim.opt_local.expandtab = true
+	end,
+})
+
+api.nvim_create_autocmd("FileType", {
+	pattern = { "javascript", "typescript", "typescriptreact", "javascriptreact" },
+	callback = function()
+		vim.opt_local.shiftwidth = 2
+		vim.opt_local.tabstop = 2
+		vim.opt_local.expandtab = true
+	end,
+})
+
+api.nvim_create_autocmd("FileType", {
+	pattern = { "yaml", "yml" },
+	callback = function()
+		vim.opt_local.shiftwidth = 2
+		vim.opt_local.tabstop = 2
+		vim.opt_local.expandtab = true
+	end,
+})
+
+api.nvim_create_autocmd("FileType", {
+	pattern = "lua",
+	callback = function()
+		vim.opt_local.shiftwidth = 2
+		vim.opt_local.tabstop = 2
+		vim.opt_local.expandtab = true
+	end,
+})
