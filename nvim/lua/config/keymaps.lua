@@ -79,7 +79,7 @@ vim.keymap.set("n", "<leader>p", '"+p') -- Paste from Windows clipboard
 
 -- Quarto keymaps
 -- Note: m stands for Meta key; left Alt
--- It's also displayed with the symbol for the option key on MacOS
+-- It's also displayed with the symbol for the option key on MacOS in the which-key plugin
 vim.keymap.set({ "n", "i" }, "<m-i>", "<esc>i```{python}<cr>```<esc>O", { desc = "[i]sert Python Code Chunk" }) -- Insert a code chunk for Python in a .qmd file
 vim.keymap.set("n", "<m-t>", ":vsplit term://ipython<CR>", { desc = "Split [t]erminal horizontally and open IPython" }) -- Open an IPython instance
 vim.keymap.set("n", "<leader>qp", ":QuartoPreview<CR>", { desc = "Open [q]uarto [p]review" }) -- Open Quarto preview
